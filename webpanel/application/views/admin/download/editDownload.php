@@ -60,13 +60,13 @@
 								<div class="form-group">
 								  <label for="link">Dowload File</label>
 								  <input type="text" class="" id="link" name="link" placeholder="Enter link" value="<?php echo$result[0]['download_Link'];?>">								  
-									<input type="button" value="Browse Server" id="browselink" />
+									<input type="button" value="Browse Server" onclick="BrowseServer( 'Images:/', 'link' );"  />
 
 								</div>
 								<div class="form-group">
 								  <label for="link">Download Image</label>
 								  <input type="text" class="" id="dwnldImage" name="dwnldImage" placeholder="Enter Image" value="<?php echo$result[0]['download_Img'];?>">								  
-									<input type="button" value="Browse Server" id="browsedwnldImage" />
+									<input type="button" value="Browse Server" onclick="BrowseServer( 'Images:/', 'dwnldImage' );" />
 
 								</div>
 								<div class="form-group">

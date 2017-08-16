@@ -93,13 +93,13 @@
 								<div class="form-group">
 								  <label for="link">Paper Link</label>
 								  <input type="text" class="" id="link" name="link" placeholder="Enter link" >	
-									<input type="button" value="Browse Server" onclick="BrowseServer( 'link' );" />
+									<input type="button" value="Browse Server" onclick="BrowseServer( 'Images:/', 'link' );" />
 
 								</div>
 								<div class="form-group">
 								  <label for="solution">Paper Solution Link</label>
 								  <input type="text" class="" id="solution" name="solution" placeholder="Enter Solution  link" >	
-									<input type="button" value="Browse Server" onclick="BrowseServer( 'solution' );" />
+									<input type="button" value="Browse Server" onclick="BrowseServer( 'Images:/', 'solution' );" />
 
 								</div>
 								<div class="form-group">

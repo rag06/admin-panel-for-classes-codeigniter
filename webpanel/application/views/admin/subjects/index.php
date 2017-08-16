@@ -61,7 +61,7 @@
 								<div class="form-group">
 								 <label for="syllabus"> Syllabus</label>
 								  <input type="text" class="form-control" id="syllabus" name="syllabus" placeholder="Enter syllabus">
-									<input type="button" value="Browse Server" onclick="BrowseServer( 'syllabus' );" />
+									<input type="button" value="Browse Server"  onclick="BrowseServer( 'Images:/', 'syllabus' );" />
 								  
 								</div>
 							</div>
@@ -189,7 +189,7 @@
 								<div class="form-group">
 								 <label for="editSyllabus"> Syllabus</label>
 								  <input type="text" class="form-control" id="editSyllabus" name="editSyllabus" placeholder="Enter syllabus">
-									<input type="button" value="Browse Server" onclick="BrowseServer( 'editSyllabus' );" />
+									<input type="button" value="Browse Server"   onclick="BrowseServer( 'Images:/', 'editSyllabus' );" />
 								  
 								</div>
 							<input type="submit" class="btn btn-primary" value="Save Changes">

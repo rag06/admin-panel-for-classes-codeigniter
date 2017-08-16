@@ -46,7 +46,7 @@
 								<div class="form-group">
 								  <label for="link">Photos Image</label>
 								  <input type="text" class="" id="link" name="link" placeholder="Enter link"  value="<?php echo$result[0]['photos_Img'];?>">								  
-									<input type="button" value="Browse Server"  onclick="BrowseServer( 'link' );" />
+									<input type="button" value="Browse Server"  onclick="BrowseServer( 'Images:/', 'link' );"/>
 
 								</div>
 								  <!-- Date mm/dd/yyyy -->

@@ -47,7 +47,7 @@
 								<div class="form-group">
 								 <label for="img"> Image</label>
 								  <input type="text" class="form-control images" id="img" name="img" placeholder="Enter  Image">
-									<input type="button" value="Browse Server" onclick="BrowseServer( 'img' );" />
+									<input type="button" value="Browse Server"  onclick="BrowseServer( 'Images:/', 'img' );" />
 								</div>
 								<a href="<?php echo base_url() ;?>/admin/testimonials/testimonials" class="btn btn-success btn-sm">Cancel</a>
 								<button type="submit" class="btn btn-primary pull-right">Add Testimonial </button>

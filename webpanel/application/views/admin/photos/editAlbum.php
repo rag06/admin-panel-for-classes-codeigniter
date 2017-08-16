@@ -54,7 +54,7 @@
 								<div class="form-group">
 								  <label for="link">Event Image</label>
 								  <input type="text" class="" id="link" name="link" placeholder="Enter link"  value="<?php echo$result[0]['albums_Image'];?>">								  
-									<input type="button" value="Browse Server"  onclick="BrowseServer( 'link' );" />
+									<input type="button" value="Browse Server" onclick="BrowseServer( 'Images:/', 'link' );" />
 
 								</div>
 								<div class="form-group">

@@ -58,7 +58,7 @@
 								<div class="form-group">
 								 <label for="feature">Blog Images</label>
 								  <input type="text" class="form-control images" id="images" name="images" placeholder="Enter Product Images" value="<?php echo $result[0]['Blog_Img'];?>">
-									<input type="button" value="Browse Server" onclick="BrowseServer( 'images' );" />
+									<input type="button" value="Browse Server" onclick="BrowseServer( 'Images:/', 'images' );"  />
 								</div>
 								<div class="form-group">
 								  <label for="keyword">Meta Keyword</label>

@@ -51,7 +51,7 @@
 								<div class="form-group">
 								 <label for="img"> Image</label>
 								  <input type="text" class="form-control images" id="img" name="img" placeholder="Enter  Image" value=" <?php echo $result[0]['image_path'];?>">
-									<input type="button" value="Browse Server" onclick="BrowseServer( 'img' );" />
+									<input type="button" value="Browse Server"  onclick="BrowseServer( 'Images:/', 'img' );" />
 								</div>
 							
 								<a href="<?php echo base_url() ;?>/admin/results/results" class="btn btn-success btn-sm">Cancel</a>

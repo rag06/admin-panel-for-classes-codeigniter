@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 12, 2017 at 02:08 AM
+-- Generation Time: Aug 16, 2017 at 11:13 AM
 -- Server version: 5.6.32-78.1-log
 -- PHP Version: 5.6.20
 
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `albums` (
   `albums_Subctg` tinyint(1) DEFAULT '0',
   `albums_Date` date NOT NULL,
   `albums_Status` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `albums`
@@ -70,7 +70,8 @@ INSERT INTO `albums` (`albums_ID`, `albums_Name`, `albums_Image`, `albums_Subctg
 (1, 'firstbrick_test', '/ckfinder/userfiles/images/event_img4.jpg', 1, '2017-01-02', 1),
 (5, 'Mahashivratri', '/ckfinder/userfiles/images/event_img1.jpg', 1, '2017-02-14', 1),
 (6, 'New No Sub', '/ckfinder/userfiles/images/coin_dr.gif', 0, '2014-05-22', 1),
-(7, 'New', '/ckfinder/userfiles/images/event_img4.jpg', 1, '2012-02-12', 1);
+(7, 'New', '/ckfinder/userfiles/images/event_img4.jpg', 1, '2012-02-12', 1),
+(8, 'Bugs and Reopen', '', 1, '2022-02-05', 1);
 
 -- --------------------------------------------------------
 
@@ -116,6 +117,17 @@ CREATE TABLE IF NOT EXISTS `blogs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `branches`
+--
+
+CREATE TABLE IF NOT EXISTS `branches` (
+  `branch_ID` int(12) NOT NULL,
+  `branch_Name` varchar(500) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `downloads`
 --
 
@@ -130,7 +142,14 @@ CREATE TABLE IF NOT EXISTS `downloads` (
   `download_isTrue` int(1) NOT NULL DEFAULT '0',
   `download_Status` int(1) NOT NULL DEFAULT '1',
   `download_AddDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `downloads`
+--
+
+INSERT INTO `downloads` (`download_Id`, `download_Name`, `download_Catg`, `download_Owner`, `download_Link`, `download_Img`, `download_Description`, `download_isTrue`, `download_Status`, `download_AddDate`) VALUES
+(9, 'Derivitives', 8, '', '', '', '<p>fsdfs</p>\r\n', 1, 1, '2017-08-16 07:14:36');
 
 -- --------------------------------------------------------
 
@@ -378,6 +397,7 @@ CREATE TABLE IF NOT EXISTS `subjects` (
   `subject_ID` int(12) NOT NULL,
   `subject_Name` varchar(250) NOT NULL,
   `subject_sem` int(12) NOT NULL,
+  `subject_branch` int(12) NOT NULL,
   `subject_Syllabus` varchar(500) DEFAULT '#',
   `subject_status` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
@@ -386,9 +406,9 @@ CREATE TABLE IF NOT EXISTS `subjects` (
 -- Dumping data for table `subjects`
 --
 
-INSERT INTO `subjects` (`subject_ID`, `subject_Name`, `subject_sem`, `subject_Syllabus`, `subject_status`) VALUES
-(1, 'Engineering Mechanics', 1, '/ckfinder/userfiles/files/books/Glimpses1English.pdf', 1),
-(2, 'Applied Mathematics - I', 1, '/ckfinder/userfiles/files/books/Glimpses4English.pdf', 1);
+INSERT INTO `subjects` (`subject_ID`, `subject_Name`, `subject_sem`, `subject_branch`, `subject_Syllabus`, `subject_status`) VALUES
+(1, 'Engineering Mechanics', 1, 0, '/ckfinder/userfiles/files/books/Glimpses1English.pdf', 1),
+(2, 'Applied Mathematics - I', 1, 0, '/ckfinder/userfiles/files/books/Glimpses4English.pdf', 1);
 
 -- --------------------------------------------------------
 
@@ -501,6 +521,12 @@ ALTER TABLE `blogs`
   ADD PRIMARY KEY (`Blog_ID`);
 
 --
+-- Indexes for table `branches`
+--
+ALTER TABLE `branches`
+  ADD PRIMARY KEY (`branch_ID`);
+
+--
 -- Indexes for table `downloads`
 --
 ALTER TABLE `downloads`
@@ -591,7 +617,7 @@ ALTER TABLE `admin_users`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `albums_ID` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `albums_ID` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `blogcategory`
 --
@@ -603,10 +629,15 @@ ALTER TABLE `blogcategory`
 ALTER TABLE `blogs`
   MODIFY `Blog_ID` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
+-- AUTO_INCREMENT for table `branches`
+--
+ALTER TABLE `branches`
+  MODIFY `branch_ID` int(12) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `downloads`
 --
 ALTER TABLE `downloads`
-  MODIFY `download_Id` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `download_Id` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `download_category`
 --

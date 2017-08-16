@@ -52,7 +52,7 @@
 								<div class="form-group">
 								  <label for="link">Event Image</label>
 								  <input type="text" class="" id="link" name="link" placeholder="Enter link" >								  
-									<input type="button" value="Browse Server"  onclick="BrowseServer( 'link' );" />
+									<input type="button" value="Browse Server"    onclick="BrowseServer( 'Images:/', 'link' );" />
 
 								</div>
 								

@@ -36,13 +36,25 @@
 								echo validation_errors();
 								echo "</div>";
 								?>
-							<div class="col-md-4">
+							<div class="col-md-3">
 								<div class="form-group">
-								  <label for="email">Email</label>
-								  <input type="email" class="form-control" id="email" name="email" placeholder="Enter Subcriber email">
+								  <label for="name">Name</label>
+								  <input type="text" class="form-control" id="name" name="name" placeholder="Enter Subcriber Name" required>
 								</div>
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-3">
+								<div class="form-group">
+								  <label for="email">Email</label>
+								  <input type="email" class="form-control" id="email" name="email" placeholder="Enter Subcriber email" required>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+								  <label for="number">Number</label>
+								  <input type="text" class="form-control" id="number" name="number" placeholder="Enter Subcriber Number" required>
+								</div>
+							</div>
+							<div class="col-md-2">
 								<div class="form-group">
 								 <label for="status"> Status</label>
 								  <select class="form-control" name="status" id="status">
@@ -51,7 +63,7 @@
 								  </select>
 								</div>
 							</div>
-							<div class="col-md-4"><br/>
+							<div class="col-md-2"><br/>
 								<button type="submit" class="btn btn-primary">Add </button>
 							</div>
 						  </div><!-- /.box-body -->
@@ -69,6 +81,8 @@
 								<tr>
 								  <th style="width: 10px">#</th>
 								  <th>Name</th>
+								  <th>Email</th>
+								  <th>Number</th>
 								  <th>Status</th>
 								  <th>Actions</th>
 								</tr>
@@ -80,7 +94,9 @@
 										?>
 								<tr>
 								  <td><?php echo $i;?>.</td>
+								  <td><?php echo $row->Subcribers_Name;?></td>
 								  <td><?php echo $row->Subcribers_Email;?></td>
+								  <td><?php echo $row->Subcribers_Mobile;?></td>
 								  <td>
 									<?php if($row->Subscribers_Status==1){
 												echo'<span class="badge bg-green"> Active</span>';
@@ -140,6 +156,14 @@
 							  <input type="text" class="form-control" id="editEmail" name="editEmail" placeholder="Enter Subcriber Email">
 							</div>
 							
+							<div class="form-group">
+							  <label for="editName">Name</label>
+							  <input type="text" class="form-control" id="editName" name="editName" placeholder="Enter Subcriber Name" required>
+							</div>
+							<div class="form-group">
+							  <label for="editNumber">Number</label>
+							  <input type="text" class="form-control" id="editNumber" name="editNumber" placeholder="Enter Subcriber Number" required>
+							</div>
 							<div class="form-group">
 							 <label for="editStatus"> Status</label>
 							  <select class="form-control" name="editStatus" id="editStatus">

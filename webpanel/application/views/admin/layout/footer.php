@@ -313,6 +313,8 @@ function ShowThumbnails( fileUrl, data )
 							console.log(obj);  //as a debugging message.
 							$('#editSubcriberId').val(id);
 							$('#editEmail').val(obj[0]['Subcribers_Email']);
+							$('#editName').val(obj[0]['Subcribers_Name']);
+							$('#editNumber').val(obj[0]['Subcribers_Mobile']);
 							$('#editStatus').val(obj[0]['Subscribers_Status']);
 							$('#editSubcriber').modal();
 						 }catch(e) {     

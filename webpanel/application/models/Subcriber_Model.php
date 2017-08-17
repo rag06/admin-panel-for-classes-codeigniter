@@ -12,9 +12,11 @@ Class Subcriber_Model extends CI_Model {
 		$this->db->limit(1);
 		$query = $this->db->get();
 		
+		$name = $this->db->escape($data['name']);
+		$number = $this->db->escape($data['number']);
 		$email = $this->db->escape($data['email']);
 		$status = $data['status'];
-		$sql = "INSERT INTO subcribers (Subcribers_Email,Subscribers_Status) VALUES (".$email.",".$status.")";
+		$sql = "INSERT INTO subcribers (Subcribers_Email,Subcribers_Name,Subcribers_Mobile,Subscribers_Status) VALUES (".$email.",".$name.",".$number.",".$status.")";
 		
 		if ($query->num_rows() == 0) {
 			$this->db->query($sql);
@@ -55,8 +57,10 @@ Class Subcriber_Model extends CI_Model {
 	public function updateSubcriber($id,$data)
 	{			
 		$email = $this->db->escape($data['email']);
+		$name = $this->db->escape($data['name']);
+		$number = $this->db->escape($data['number']);
 		$status = $data['status'];
-		$sql = "UPDATE subcribers SET Subcribers_Email = ".$email.",Subscribers_Status = ".$status." WHERE Subcribers_ID = $id";
+		$sql = "UPDATE subcribers SET Subcribers_Email = ".$email.",Subcribers_Name = ".$name.",Subcribers_Mobile = ".$number.",Subscribers_Status = ".$status." WHERE Subcribers_ID = $id";
 		
 			$this->db->query($sql);
 			if ($this->db->affected_rows() > 0) {

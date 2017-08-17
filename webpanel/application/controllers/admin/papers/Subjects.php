@@ -24,7 +24,8 @@ class Subjects extends CI_Controller {
 		if(!isset($this->session->userdata['logged_in'])){
 			redirect('admin/login/index');
 		}
-		$result = $this->Subject_Model->listSubject();
+		$result['result'] = $this->Subject_Model->listSubject();
+		$result['branches'] = $this->Subject_Model->listBranches();
 			$this->load->view('admin/subjects/index',$result);
 		
 	}
@@ -43,6 +44,7 @@ class Subjects extends CI_Controller {
 				$data = array(
 				'name' => $this->input->post('name'),
 				'sem' => $this->input->post('sem'),
+				'branch' => $this->input->post('branch'),
 				'syllabus' => $this->input->post('syllabus'),
 				'status' => $this->input->post('status')
 				);
@@ -78,6 +80,7 @@ class Subjects extends CI_Controller {
 				$id =$this->input->post('editCategoryId');
 				$data = array(
 				'name' => $this->input->post('editName'),
+				'branch' => $this->input->post('editBranch'),
 				'sem' => $this->input->post('editSem'),
 				'syllabus' => $this->input->post('editSyllabus'),
 				'status' => $this->input->post('editStatus')

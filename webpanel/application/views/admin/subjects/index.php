@@ -36,10 +36,21 @@
 								echo validation_errors();
 								echo "</div>";
 								?>
-							<div class="col-md-4">
+							<div class="col-md-3">
 								<div class="form-group">
 								  <label for="name">Name</label>
 								  <input type="text" class="form-control" id="name" name="name" placeholder="Enter Subject name">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+								  <label for="branch">Branch</label>
+								   <select class="form-control" name="branch" id="branch">
+								   <?php foreach($branches['result'] as $branchrow){
+											echo '<option value="'.$branchrow->branch_ID.'">'.$branchrow->branch_Name.'</option>';
+									}
+									?>
+								  </select>
 								</div>
 							</div>
 							<div class="col-md-2">
@@ -54,10 +65,11 @@
 									<option value="6">6</option>
 									<option value="7">7</option>
 									<option value="8">8</option>
+									
 								  </select>
 								</div>
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-2">
 								<div class="form-group">
 								 <label for="syllabus"> Syllabus</label>
 								  <input type="text" class="form-control" id="syllabus" name="syllabus" placeholder="Enter syllabus">
@@ -92,6 +104,7 @@
 								<tr>
 								  <th style="width: 10px">#</th>
 								  <th>Name</th>
+								  <th>Branch</th>
 								  <th>Sem</th>
 								  <th>Status</th>
 								  <th>Actions</th>
@@ -100,11 +113,12 @@
 								<tbody>
 								<?php 
 								$i=1;
-									foreach($result as $row){
+									foreach($result['result'] as $row){
 										?>
 								<tr>
 								  <td><?php echo $i;?>.</td>
 								  <td><?php echo $row->subject_Name;?></td>
+								  <td><?php echo $row->branch_Name;?></td>
 								  <td><?php echo $row->subject_sem;?></td>
 								  <td>
 									<?php if($row->subject_status==1){
@@ -166,6 +180,15 @@
 								  <input type="text" class="form-control" id="editName" name="editName" placeholder="Enter  name">
 							</div>
 							
+								<div class="form-group">
+								  <label for="editBranch">Branch</label>
+								   <select class="form-control" name="editBranch" id="editBranch">
+								   <?php foreach($branches['result'] as $branchrow){
+											echo '<option value="'.$branchrow->branch_ID.'">'.$branchrow->branch_Name.'</option>';
+									}
+									?>
+								  </select>
+								</div>
 								<div class="form-group">
 								  <label for="editSem">Sem</label>
 								   <select class="form-control" name="editSem" id="editSem">
@@ -232,6 +255,7 @@
 							$('#editSem').val(obj[0]['subject_sem']);
 							$('#editStatus').val(obj[0]['subject_status']);
 							$('#editSyllabus').val(obj[0]['subject_Syllabus']);
+							$('#editBranch').val(obj[0]['subject_branch']);
 							$('#editCategory').modal();
 						 }catch(e) {     
 							alert('Exception while request..');

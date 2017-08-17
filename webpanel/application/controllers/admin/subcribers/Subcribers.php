@@ -40,6 +40,8 @@ class Subcribers extends CI_Controller {
 		} else {
 				$data = array(
 				'email' => $this->input->post('email'),
+				'name' => $this->input->post('name'),
+				'number' => $this->input->post('number'),
 				'status' => $this->input->post('status')
 				);
 				
@@ -74,6 +76,8 @@ class Subcribers extends CI_Controller {
 				$id =$this->input->post('editSubcriberId');
 				$data = array(
 				'email' => $this->input->post('editEmail'),
+				'name' => $this->input->post('editName'),
+				'number' => $this->input->post('editNumber'),
 				'status' => $this->input->post('editStatus')
 				);
 				
